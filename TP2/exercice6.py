@@ -1,5 +1,7 @@
 __version__ =   "TP2 - Exercice #6"
-__author__  =   "Nom eleve 1 (matricule 1), nom eleve 2 (matricule 2)"
+__author__  =   "William Morin (2213763), Théo Manach (2058412)"
+
+import math
 
 # Vous devez écrire un programme qui permet d'éffectuer les opérations de somme,
 # de produit, calcul de module, de test et de conversion sur deux nombres complexes entrés par l'utilisateur.
@@ -38,3 +40,18 @@ La partie entière du module du produit en hexadécimal est de: 0xfd
 """
 
 # TODO: Commencez votre programme ici
+
+c1 = complex(input("Veuillez entrer le premier nombre complexe: "))
+c2 = complex(input("Veuillez entrer le deuxième nombre complexe: "))
+
+somme = c1 + c2
+produit = c1 * c2
+module = math.sqrt(produit.real**2+produit.imag**2)
+
+print("La somme est de:", somme)
+print("La somme est un réel pur:", somme.imag == 0)
+print("Le produit est de:", produit)
+print("Le produit est un imaginaire pur:", produit.real == 0)
+print("Le module du produit est de:", round(module,2))
+print("La partie entière du module du produit en binaire est de:", bin(int(module.real)))
+print("La partie entière du module du produit en hexadecimal est de:", hex(int(module.real)))

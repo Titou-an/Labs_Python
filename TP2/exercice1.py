@@ -1,5 +1,5 @@
 __version__ = "TP2 - Exercice #1"
-__author__ = "Nom eleve 1 (matricule 1), nom eleve 2 (matricule 2)"
+__author__ = "William Morin (2213763), Théo Manach (2058412)"
 
 # Vous devez écrire un programme qui demande à l'utilisateur un nombre entier
 # et qui calcule le resultat de l'equation n + nn + nnn. Voir exemples ci-dessous.
@@ -16,3 +16,7 @@ Le résultat est : 3
 """
 
 # TODO: Commencez votre programme ici
+
+n = int(input("Veuillez entrer un entier: "))
+resultat =  n + (n * n) + (n * n * n)
+print("Le résultat est :", resultat)

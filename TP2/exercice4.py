@@ -1,5 +1,5 @@
 __version__ =   "TP2 - Exercice #4"
-__author__  =   "Nom eleve 1 (matricule 1), nom eleve 2 (matricule 2)"
+__author__  =   "William Morin (2213763), Théo Manach (2058412)"
 
 # Écrire un programme qui permet d'évaluer le nombre d'heures d'étude d'un cours 
 # à partir du nombre de jours d'étude et du nombre d'heures d'étude par jours.
@@ -32,3 +32,14 @@ Le budget d'étude est dépassé: True
 """
 
 # TODO: Commencez votre programme ici
+
+print("----- Planificateur d'étude -----")
+
+cours = input("Bonjour, veuillez entrer le nom du cours:")
+seances = int(input("Veuillez entrer le nombre de séances d'étude:"))
+heures = float(input("Veuillez entrer le nombre d'heure(s) d'étude par séance:"))
+
+print("Le cours", cours)
+print("A besoin d'un nombre d'heures d'étude de :", seances * heures, "heure(s)")
+print("Le budget d'étude est dépassé:", (seances * heures) > 50)
+print("----- Fin de programme, merci et à très bientôt -----")

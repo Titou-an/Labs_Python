@@ -1,5 +1,7 @@
 __version__ = "TP2 - Exercice #2"
-__author__ = "Nom eleve 1 (matricule 1), nom eleve 2 (matricule 2)"
+__author__ = "William Morin (2213763), Théo Manach (2058412)"
+
+import datetime
 
 # Vous devez écrire un programme qui formatte la date de naissance d'un utilisateur.
 # Vous devez commencer par demander le jour, le mois et l'année de naissance de l'utilisateur.
@@ -22,3 +24,13 @@ L'utilisateur est né le 25-12-1950 et il aura 72 ans à la fin de l'année.
 """
 
 # TODO: Commencez votre programme ici
+
+jour = int(input("Veuillez entrer le jour :"))
+mois = int(input("Veuillez entrer le mois :"))
+annee = int(input("Veuillez entrer l'année :"))
+
+date = datetime.date(annee, mois, jour)
+
+print(
+    "L'utilisateur est né le", date.strftime("%d-%m-%Y"),
+    "et il aura", datetime.date.today().year - date.year, "ans à la fin de l'année.")

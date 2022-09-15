@@ -1,8 +1,7 @@
-__version__ =   "TP2 - Exercice #5"
-__author__  =   "Nom eleve 1 (matricule 1), nom eleve 2 (matricule 2)"
+__version__ = "TP2 - Exercice #5"
+__author__ = "William Morin (2213763), Théo Manach (2058412)"
 
-
-# Écrire un programme qui calcule la montant d'argent à payer par personne d'un groupe d'ami(e)s 
+# Écrire un programme qui calcule la montant d'argent à payer par personne d'un groupe d'ami(e)s
 # dans un restaurant, après avoir choisi le pourcentage de pourboire (tips) 
 # et le nombre de membres du groupe.
 # Voir exemples ci-dessous.
@@ -37,3 +36,17 @@ Chacun doit payer: $ 34.13
 
 """
 # TODO: Commencez votre programme ici
+
+print("---- Calculateur de pourboire ----")
+montant = float(input("Quel est le montant de la facture initiale?"))
+pourcentage = int(input("Quel est le pourcentage de pourboire? 10, 12, ou 15?")) / 100
+personnes = int(input("Combien de personnes y a-t-il dans le groupe?"))
+
+pourboire = montant * pourcentage
+total = pourboire + montant
+
+print("Pourboire total: $", round(pourboire, 2))
+print("Pourboire par membre: $", round(pourboire / personnes, 2))
+print("--- Coût total ---")
+print("Facture totale: $", round(total, 2))
+print("Chacun doit payer: $", round(total / personnes, 2))

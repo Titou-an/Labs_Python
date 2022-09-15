@@ -8,7 +8,7 @@ cas1 = TestCaseWholeFile(
     test_name="Test1: '12', '4', '2000'",
     filename=file,
     mock_input=['12', '4', '2000'],
-    expected_output=["L'utilisateur est né le 12-4-2000 et il aura 22 ans à la fin de l'année."],
+    expected_output=["L'utilisateur est né le 12-04-2000 et il aura 22 ans à la fin de l'année."],
     timeout=1
 )
 cas2 = TestCaseWholeFile(
