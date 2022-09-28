@@ -18,5 +18,5 @@ Le résultat est : 3
 # TODO: Commencez votre programme ici
 
 n = int(input("Veuillez entrer un entier: "))
-resultat =  n + (n * n) + (n * n * n)
+resultat = n + (n * n) + (n * n * n)
 print("Le résultat est :", resultat)
