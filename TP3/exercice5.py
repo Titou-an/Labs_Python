@@ -29,3 +29,27 @@ Veuillez entrer la valeur de la demi-diagonale (nombre entier strictement positi
 """
 
 # TODO : Ajouter votre code
+
+while True:
+    inp = input("Veuillez entrer la valeur de la demi-diagonale (nombre entier strictement positif) :")
+    if inp.isnumeric():
+        d = int(inp)
+        if d > 0:
+            break
+
+for y in range(d + 1):
+    for x in range(2 * d + 1):
+        if d - y <= x <= d + y:
+            print("@", end="")
+        else:
+            print(".", end="")
+    print()
+
+for y in range(d, 0, -1):
+    for x in range(2 * d + 1):
+        if d - y < x < d + y:
+            print("@", end="")
+        else:
+            print(".", end="")
+
+    print()

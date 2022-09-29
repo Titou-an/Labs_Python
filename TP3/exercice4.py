@@ -1,5 +1,5 @@
 __version__ = "TP3 - Exercice #4"
-__author__ = "Nom eleve 1 (matricule 1), nom eleve 2 (matricule 2)"
+__author__ = "William Morin (2213763), Théo Manach (2058412)"
 
 """
 La compagnie Coca-cola a décidé en 2022 de mettre en place une politique pour favoriser le
@@ -36,3 +36,19 @@ Il vous restera 1 bouteille(s) vide(s) a la fin
 """
 
 # TODO : Ajouter votre code
+
+bVide = int(input("Veuillez entrer le nombre de bouteilles vides :"))
+bPleine = int(input("Veuillez entrer le nombre de bouteilles pleines :"))
+bEchange = int(input("Veuillez entrer le nombre de bouteilles vides echangeables :"))
+
+compteur = bPleine
+
+while (bVide+bPleine) >= bEchange:
+    bVide += bPleine
+    bPleine = bVide // bEchange
+    compteur += bPleine
+    bVide = bVide % bEchange
+
+
+print("Vous pouvez boire exactement", compteur, "bouteille(s)")
+print("Il vous restera", bVide+bPleine, "bouteille(s) vide(s) a la fin")

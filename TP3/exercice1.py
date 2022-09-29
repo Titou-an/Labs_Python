@@ -22,6 +22,8 @@ La serie recherchee est : 0 1 1 2 3 5 8 13 21 34
 
 # TODO : Ajouter votre code
 
+phi = (1+5**0.5)/2
+
 while True:
     inp = input("Veuillez entrer le nombre n (nombre entier positif) :")
     if inp.isnumeric():
@@ -31,14 +33,14 @@ while True:
 
 precedant = 0
 suivant = 1
-resultat = [0]
+resultat = [0,1]
 
-for i in range(1, n):
-    temp = suivant
-    resultat.append(suivant)
-    suivant += precedant
-    precedant = temp
+for i in range(2, n):
+    nouveau = suivant + precedant
+    resultat.append(nouveau)
+    precedant = suivant
+    suivant = nouveau
 
 print("La serie recherchee est :", end=" ")
-for nombre in resultat:
-    print(nombre, end=" ")
+for nombre in range(n):
+    print(resultat[nombre], end=" ")

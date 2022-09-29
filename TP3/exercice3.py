@@ -17,3 +17,16 @@ Votre mot 2 est : "chat"
 """
 
 # TODO : Ajouter votre code
+text = input("Veuillez entrer un texte :")
+
+mot1 = ""
+mot2 = ""
+
+for pos in range(len(text)):
+    if pos % 2 == 0:
+        mot1 += text[pos]
+    else:
+        mot2 += text[pos]
+
+print("Votre mot 1 est :", "\"" + mot1 + "\"")
+print("Votre mot 2 est :", "\"" + mot2 + "\"")
