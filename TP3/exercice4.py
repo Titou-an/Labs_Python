@@ -45,9 +45,11 @@ compteur = bPleine
 
 while (bVide+bPleine) >= bEchange:
     bVide += bPleine
+    
     bPleine = bVide // bEchange
-    compteur += bPleine
     bVide = bVide % bEchange
+
+    compteur += bPleine
 
 
 print("Vous pouvez boire exactement", compteur, "bouteille(s)")
