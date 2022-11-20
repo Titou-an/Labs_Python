@@ -1,0 +1,5 @@
+# Écrivez ci-bas une description précise de l'exécution du programme utilisé par les pirates lors de l'attaque, selon le code transpilé à l'exercice 1
+
+<VOTRE RÉPONSE ICI, EN 2 PHRASES MAX.>
+Le programme cherche dans un maximum de 300 fichiers du systeme la présence de lignes contenant le terme "password".
+Lorsqu'il trouve un mot de passe, il imprime l'emplacement du fichier ainsi que la ligne contenant le mot de passe.

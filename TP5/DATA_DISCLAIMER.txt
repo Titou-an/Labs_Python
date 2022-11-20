@@ -1,0 +1,11 @@
+Climate Change Knowledge Portal
+For Development Parctitioners and Policy Makers
+(https://climateknowledgeportal.worldbank.org/)
+
+Collection: 	CRU (Observed)
+Variable: 		Mean-Temperature
+Time period: 	1991-2020
+Area type: 		Country + Sub-national units (229 total)
+Aggregation: 	Annual + Monthly
+
+(c) DE LAFONTAINE, Charles

@@ -1,0 +1,4 @@
+TestsNePasToucher/r*.txt
+programme-decouvert.txt
+programme-obfusque.txt
+__pycache__
