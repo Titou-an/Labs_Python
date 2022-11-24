@@ -78,9 +78,9 @@ def creer_dictionnaire():
     }
 
     # Associe tous les mot cle à leur code obfusqué correspondant
-    for cat in lettreMotCle.keys():
-        for ltr in lettreMotCle[cat].keys():
-            dictionnaire["_ZN" + cat + ltr + "C1Ev"] = lettreMotCle[cat][ltr]
+    for categorie in lettreMotCle.keys():
+        for ltr in lettreMotCle[categorie].keys():
+            dictionnaire["_ZN" + categorie + ltr + "C1Ev"] = lettreMotCle[categorie][ltr]
 
     # Associe tous les characteres imprimables à leur code obfusqué correspondant
     for char in ((set(string.ascii_letters).union(string.digits)).union(
@@ -89,6 +89,7 @@ def creer_dictionnaire():
         valHex = "0x%02x" % (ord(char))
         dictionnaire["//[" + valHex + "]"] = char
 
+    # Ajoute le code mort manquant
     for code_mort in codeMort:
         dictionnaire[code_mort] = ""
 
@@ -114,6 +115,8 @@ def transpilation(chemin_fichier_brumeux, chemin_fichier_transpile):
 
     for motObf, mot in dict.items():
         contenu = contenu.replace(motObf, mot)
+
+
     with open(chemin_fichier_transpile, 'w', encoding="utf-8") as f:
         f.write(contenu)
 
@@ -163,16 +166,18 @@ def obfuscation(chemin_fichier_a_obfusquer, chemin_fichier_obfusque):
 
     dict = creer_dictionnaire()
 
-    for ligne in contenu.splitlines(True):
-        for mot in ligne.split(" "):
+    for ligne in contenu.splitlines(True): # Separe le contenu lignes par lignes
+        for mot in ligne.split(" "): # Separe la ligne en mots
             if mot in dict.values():
-                cm = generer_code_mort(codeMort)
-                contenu_fichier += list(dict.keys())[list(dict.values()).index(mot)] + ("" if cm == None else cm)
+                if mot != "":
+                    cm = generer_code_mort(codeMort)
+                    contenu_fichier += list(dict.keys())[list(dict.values()).index(mot)] + ("" if cm == None else cm)
             else:
-                for char in mot:
+                for char in mot: # Separe le mot en caracteres
                     cm = generer_code_mort(codeMort)
                     contenu_fichier += list(dict.keys())[list(dict.values()).index(char)] + ("" if cm == None else cm)
 
+            # Ajoute l'espace (sauf apres un retour du chariot)
             if not mot.endswith("\n"):
                 cm = generer_code_mort(codeMort)
                 contenu_fichier += list(dict.keys())[list(dict.values()).index(" ")] + ("" if cm == None else cm)
