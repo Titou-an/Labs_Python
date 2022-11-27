@@ -53,7 +53,7 @@ def creer_dictionnaire_temp_regions():
         with open(get_repertoire_courant() + chemin_fichiers_temperature + file, encoding="utf-8") as f:
             reader = csv.reader(f, delimiter=delimiteur_csv)
 
-            # Saute les deux premieres rangees
+            # Saute les deux premieres rangées
             next(reader)
             next(reader)
 
